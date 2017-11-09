@@ -1,4 +1,7 @@
 #!/bin/sh
+
+PATH="$(pwd)/lib/x86-64/:$PATH"
+
 keys=$(openssl ecparam -name secp256k1 -genkey -noout | openssl ec -text -noout 2> /dev/null)
 
 # extract private key in hex format, removing newlines, leading zeroes and semicolon 
